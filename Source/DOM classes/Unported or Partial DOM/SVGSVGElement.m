@@ -209,7 +209,7 @@
 		
 		else
 		{
-			DDLogWarn(@"Found unexpected preserve-aspect-ratio command inside element's 'preserveAspectRatio' attribute. Command = '%@'", aspectRatioCommand );
+			NSLog(@"Found unexpected preserve-aspect-ratio command inside element's 'preserveAspectRatio' attribute. Command = '%@'", aspectRatioCommand );
 		}
 	}
 
@@ -219,10 +219,10 @@
 		self.width = [SVGLength svgLengthFromNSString:[self getAttribute:@"width"]];
 	    //osx logging
 #if TARGET_OS_IPHONE        
-        DDLogVerbose(@"[%@] DEBUG INFO: set document viewBox = %@", [self class], NSStringFromCGRect( CGRectFromSVGRect(self.viewBox)));
+        NSLog(@"[%@] DEBUG INFO: set document viewBox = %@", [self class], NSStringFromCGRect( CGRectFromSVGRect(self.viewBox)));
 #else
         //mac logging
-     DDLogVerbose(@"[%@] DEBUG INFO: set document viewBox = %@", [self class], NSStringFromRect(self.viewBox));
+     NSLog(@"[%@] DEBUG INFO: set document viewBox = %@", [self class], NSStringFromRect(self.viewBox));
 #endif   
 	
 }

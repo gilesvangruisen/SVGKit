@@ -43,6 +43,4 @@
 
 @interface SVGKit : NSObject
 
-+ (void) enableLogging;
-
 @end
